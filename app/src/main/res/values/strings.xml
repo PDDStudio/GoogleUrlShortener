@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GoogleUrlShortener</string>
+    <string name="action_settings">Settings</string>
+</resources>

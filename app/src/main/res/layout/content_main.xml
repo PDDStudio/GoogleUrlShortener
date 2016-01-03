@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:padding="16dp"
+    tools:context="com.pddstudio.googleurlshortener.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter URL"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"/>
+
+    <EditText
+        android:id="@+id/urlText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp" />
+
+    <Button
+        android:id="@+id/createBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Short URL" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:text="Short Link: "/>
+
+    <TextView
+        android:id="@+id/outputLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"/>
+
+
+</LinearLayout>
