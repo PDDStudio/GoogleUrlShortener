@@ -3,6 +3,7 @@ An Android/Java Library to create short URL's using [Google's URL Shortener](htt
 
 ###Demo Application Screenshot
 ![](https://raw.githubusercontent.com/PDDStudio/GoogleUrlShortener/master/preview.png) 
+You can download the demo application [here](https://raw.githubusercontent.com/PDDStudio/GoogleUrlShortener/master/app-debug.apk)
 
 ###Get the Library
 **Using Gradle:**
