@@ -1,6 +1,8 @@
 ##Google URL Shortener
 An Android/Java Library to create short URL's using [Google's URL Shortener](http://goo.gl/).
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-GoogleUrlShortener-green.svg?style=true)](https://android-arsenal.com/details/1/2991)
+
 ###Demo Application Screenshot
 ![](https://raw.githubusercontent.com/PDDStudio/GoogleUrlShortener/master/preview.png) 
 You can download the demo application [here](https://raw.githubusercontent.com/PDDStudio/GoogleUrlShortener/master/app-debug.apk)
