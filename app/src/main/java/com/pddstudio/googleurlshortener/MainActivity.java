@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
     EditText urlText;
     Button createButton;
     TextView outputLink;
+
+    EditText shortUrlEditText;
+    Button getLongUrlButton;
+    TextView longUrlOutputLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,42 @@ public class MainActivity extends AppCompatActivity {
                 if(outputLink.getText() != null && outputLink.getText().length() > 0) {
                     Intent action = new Intent(Intent.ACTION_VIEW);
                     action.setData(Uri.parse(outputLink.getText().toString()));
+                    startActivity(action);
+                }
+            }
+        });
+
+
+
+        shortUrlEditText = (EditText) findViewById(R.id.shortUrlEditText);
+        getLongUrlButton = (Button) findViewById(R.id.getLongUrlBtn);
+        getLongUrlButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*new ShortUrlTask(urlText.getText().toString())
+                        .displayIn(outputLink)
+                        .execute();*/
+                URLShortener.longUrl(shortUrlEditText.getText().toString(), new URLShortener.LoadingCallback() {
+                    @Override
+                    public void startedLoading() {
+                        longUrlOutputLink.setText("Loading...");
+                    }
+
+                    @Override
+                    public void finishedLoading(@Nullable String longUrl) {
+                        if(longUrl != null) longUrlOutputLink.setText(longUrl);
+                        else longUrlOutputLink.setText("Unable to generate Link!");
+                    }
+                });
+            }
+        });
+        longUrlOutputLink = (TextView) findViewById(R.id.longUrlOutputLink);
+        longUrlOutputLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(longUrlOutputLink.getText() != null && longUrlOutputLink.getText().length() > 0) {
+                    Intent action = new Intent(Intent.ACTION_VIEW);
+                    action.setData(Uri.parse(longUrlOutputLink.getText().toString()));
                     startActivity(action);
                 }
             }

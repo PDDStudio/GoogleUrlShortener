@@ -1,16 +1,15 @@
 package com.pddstudio.urlshortener;
 
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.pddstudio.urlshortener.async.AsyncLoader;
+import com.pddstudio.urlshortener.async.AsyncLoader2;
 import com.pddstudio.urlshortener.model.RequestModel;
 import com.pddstudio.urlshortener.model.ResponseModel;
 
 import java.io.IOException;
 
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
@@ -67,6 +66,15 @@ public class URLShortener {
      */
     public static void shortUrl(String longUrl, LoadingCallback loadingCallback) {
         new AsyncLoader(longUrl, loadingCallback).execute();
+    }
+
+    /**
+     * Get a long URL back for the given short URL. This call is executed asynchronously and delivers the result to the given callback.
+     * @param shortUrl - The short Url for which we should get back the long Url
+     * @param loadingCallback - The callback where the result will be given to
+     */
+    public static void longUrl(String shortUrl, LoadingCallback loadingCallback) {
+        new AsyncLoader2(shortUrl, loadingCallback).execute();
     }
 
 }
