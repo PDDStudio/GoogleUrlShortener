@@ -51,8 +51,8 @@ public class AsyncLoader2 extends AsyncTask<Void, Void, String> {
     }
 
     @Override
-    public void onPostExecute(String shortUrl) {
-        this.loadingCallback.finishedLoading(shortUrl);
+    public void onPostExecute(String longUrl) {
+        this.loadingCallback.finishedLoading(longUrl);
     }
 
 }
