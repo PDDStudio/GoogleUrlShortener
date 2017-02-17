@@ -12,7 +12,7 @@ You can download the demo application [here](https://raw.githubusercontent.com/P
 ```
 dependencies {
 	//other dependencies here
-	compile 'com.pddstudio:urlshortener:1.0.1'
+	compile 'com.pddstudio:urlshortener:1.0.2'
 }
 ```
 
